@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/bootcoding-spring-projects-main.iml" filepath="$PROJECT_DIR$/.idea/bootcoding-spring-projects-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootcoding-spring-projects-main/Teacher/Teacher.iml" filepath="$PROJECT_DIR$/bootcoding-spring-projects-main/Teacher/Teacher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/bootcoding-spring-projects.iml" filepath="$PROJECT_DIR$/.idea/bootcoding-spring-projects.iml" />
       <module fileurl="file://$PROJECT_DIR$/bootcoding-spring-projects-main/coupon-system/coupon-system.iml" filepath="$PROJECT_DIR$/bootcoding-spring-projects-main/coupon-system/coupon-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootcoding-spring-projects-main/employee/employee.iml" filepath="$PROJECT_DIR$/bootcoding-spring-projects-main/employee/employee.iml" />
     </modules>
   </component>
 </project>

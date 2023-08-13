@@ -4,6 +4,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/bootcoding-spring-projects-main/coupon-system/pom.xml" />
+        <option value="$PROJECT_DIR$/bootcoding-spring-projects-main/employee/pom.xml" />
+        <option value="$PROJECT_DIR$/bootcoding-spring-projects-main/Teacher/pom.xml" />
       </list>
     </option>
   </component>
