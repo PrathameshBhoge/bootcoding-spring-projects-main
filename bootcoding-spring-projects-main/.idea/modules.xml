@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Teacher/Teacher.iml" filepath="$PROJECT_DIR$/Teacher/Teacher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/bootcoding-spring-projects-main.iml" filepath="$PROJECT_DIR$/.idea/bootcoding-spring-projects-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coupon-system/coupon-system.iml" filepath="$PROJECT_DIR$/coupon-system/coupon-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/employee/employee.iml" filepath="$PROJECT_DIR$/employee/employee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/patient/patient.iml" filepath="$PROJECT_DIR$/patient/patient.iml" />
+    </modules>
+  </component>
+</project>

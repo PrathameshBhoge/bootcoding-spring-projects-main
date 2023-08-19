@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/bootcoding-spring-projects.iml" filepath="$PROJECT_DIR$/.idea/bootcoding-spring-projects.iml" />
       <module fileurl="file://$PROJECT_DIR$/bootcoding-spring-projects-main/coupon-system/coupon-system.iml" filepath="$PROJECT_DIR$/bootcoding-spring-projects-main/coupon-system/coupon-system.iml" />
       <module fileurl="file://$PROJECT_DIR$/bootcoding-spring-projects-main/employee/employee.iml" filepath="$PROJECT_DIR$/bootcoding-spring-projects-main/employee/employee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootcoding-spring-projects-main/patient/patient.iml" filepath="$PROJECT_DIR$/bootcoding-spring-projects-main/patient/patient.iml" />
     </modules>
   </component>
 </project>

@@ -1,10 +1,11 @@
 package com.bootcoding.spring.coupon.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.bootcoding.spring.coupon.model.Coupon;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 
 @Component
@@ -22,5 +23,14 @@ public class CouponService {
         }
         return coupons;
 
+    }
+
+    public Coupon generateNewCoupon() {
+        Coupon coupon = Coupon.builder()
+                .id(UUID.randomUUID().toString())
+                .validFor(5 + new Random().nextInt(90))
+                .type("COUPON")
+                .build();
+        return coupon;
     }
 }
