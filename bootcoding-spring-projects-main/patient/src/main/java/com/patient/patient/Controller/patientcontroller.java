@@ -1,20 +1,25 @@
-package com.patient.patient.controller;
+package com.patient.patient.Controller;
 
-
-import com.patient.patient.model.Patient;
-import com.patient.patient.service.patientService;
+import com.patient.patient.Model.Patient;
+import com.patient.patient.Service.patientservice;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/Patient")
+@RequestMapping("/patient")
 public class patientcontroller {
 
     @Autowired
-    private patientService service;
+    patientservice service;
+
+   /* @PostMapping("/check")
+    public String check(@RequestBody String input){
+        System.out.println(""+input);
+        return "success";
+
+    }*/
 
     @PostMapping("/register")
     public String savePatient(@RequestBody Patient patient) {
@@ -26,8 +31,9 @@ public class patientcontroller {
 
     @GetMapping("/showpatient")
     public List<Patient> getPatient(){
-        List<Patient> getpatient=service.getPatients();
+        List<Patient> getpatient=service.getPatient();
         return getpatient;
+
     }
 
     @PostMapping("/multipleregister")
@@ -37,10 +43,8 @@ public class patientcontroller {
     }
 
     @GetMapping("/patientById/{id}")
-    public Patient patientById(@PathVariable("id") int id) {
-        Patient p = service.patientById(id);
+    public Patient patientById(@PathVariable("id") int id){
+        Patient p=service.patientById(id);
         return p;
     }
-
 }
-
