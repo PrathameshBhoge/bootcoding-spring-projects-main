@@ -35,7 +35,8 @@ public class CouponService {
             Coupon coupon=Coupon.builder().title(GenerateTitle.couponName()).category(GenerateCategory.category()).couponcode(GenerateCouponCode.generateCode())
                     .category(GenerateCategory.category()).description(GenerateDescription.description()).discount(GenerateDiscount.discount())
                     .isactive(GenerateIsActive.isActive()).type(GenerateCouponType.couponType()).status(GenerateStatus.generateStatus())
-                    .createdby(GenerateCreateBy.createBy())
+                    .createdby(GenerateCreateBy.createBy()).createDate(GenerateDate.RandomDate())
+                    //.validitydate(GenerateDateValidity.RandomDate())
                     .build();
             list.add(coupon);
         }

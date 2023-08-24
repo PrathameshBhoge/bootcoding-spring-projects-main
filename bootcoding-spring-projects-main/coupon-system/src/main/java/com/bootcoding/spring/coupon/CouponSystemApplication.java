@@ -18,7 +18,6 @@ public class CouponSystemApplication implements ApplicationRunner {
 	private CouponService couponService;
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		String s = couponService.newCoupon();
-		System.out.println("New Coupon : " + s);
+		System.out.println("Success");
 	}
 }
