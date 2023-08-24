@@ -3,10 +3,7 @@ package com.bootcoding.spring.coupon.controller;
 import com.bootcoding.spring.coupon.model.Coupon;
 import com.bootcoding.spring.coupon.service.CouponService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,17 +27,17 @@ public class CouponController {
         return couponId +"Is"+"-" + couponService.newCoupon();
     }
 
-    @GetMapping("coupon-id/{id}")
-    public Coupon getCouponObjectById(@PathVariable("id") String couponId){
-        Coupon coupon = couponService.generateNewCoupon();
-        return coupon;
-    }
-
-    @GetMapping("generate/new")
-    public Coupon generateNewCoupon(){
-        Coupon coupon = couponService.generateNewCoupon();
-        return coupon;
-    }
+//    @GetMapping("coupon-id/{id}")
+//    public Coupon getCouponObjectById(@PathVariable("id") String couponId){
+//        Coupon coupon = couponService.generateNewCoupon();
+//        return coupon;
+//    }
+//
+//    @GetMapping("generate/new")
+//    public Coupon generateNewCoupon(){
+//        Coupon coupon = couponService.generateNewCoupon();
+//        return coupon;
+//    }
 
 
     @GetMapping("getCoupon")
@@ -48,13 +45,13 @@ public class CouponController {
         return "New Coupon : " + couponService.newCoupon();
     }
 
-    @GetMapping("getJson")
-    public Coupon getDummyJson(){
-        return Coupon.builder()
-                .id(couponService.newCoupon())
-                .type("Voucher")
-                .validFor(3).build();
-    }
+//    @GetMapping("getJson")
+//    public Coupon getDummyJson(){
+//        return Coupon.builder()
+//                .id(couponService.newCoupon())
+//                .type("Voucher")
+//                .validFor(3).build();
+//    }
 
     @GetMapping("getMultipleCoupons")
     public List<String> newCouponWithQuantity(){
@@ -62,4 +59,9 @@ public class CouponController {
         return couponService.getNewCoupon(quantity);
     }
     // http://localhost:8082/app-name/coupon/getCoupon
+
+    @PostMapping("/save_random_data/{value}")
+    public List<Coupon> saveRandom(@PathVariable int value){
+        return couponService.insertCoupon(value);
+    }
 }
