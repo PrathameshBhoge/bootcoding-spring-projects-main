@@ -2,10 +2,13 @@ package com.bootcoding.spring.coupon.controller;
 
 import com.bootcoding.spring.coupon.model.Coupon;
 import com.bootcoding.spring.coupon.service.CouponService;
+import jdk.jfr.Category;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Locale;
 
 @RestController
 @RequestMapping("/coupon/")
@@ -61,7 +64,7 @@ public class CouponController {
     // http://localhost:8082/app-name/coupon/getCoupon
 
     @PostMapping("/save_random_data/{value}")
-    public List<Coupon> saveRandom(@PathVariable int value){
-        return couponService.insertCoupon(value);
+    public List<Coupon> saveRandom(@PathVariable int value, @RequestBody Coupon coupon){
+        return couponService.insertCoupon(value,coupon.getCategory(),coupon.getTitle());
     }
 }

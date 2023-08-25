@@ -29,15 +29,19 @@ public class CouponService {
 
     }
 
-    public List<Coupon> insertCoupon(int size){
+    public List<Coupon> insertCoupon(int size, String category, String title){
         List<Coupon> list =new ArrayList<>();
         for (int i =0;i<size;i++){
-            Coupon coupon=Coupon.builder().title(GenerateTitle.couponName()).category(GenerateCategory.category()).couponcode(GenerateCouponCode.generateCode())
-                    .category(GenerateCategory.category()).description(GenerateDescription.description()).discount(GenerateDiscount.discount())
+            Coupon coupon=Coupon.builder().title(title).couponcode(GenerateCouponCode.generateCode())
+                    .category(category).description(GenerateDescription.description()).discount(GenerateDiscount.discount())
                     .isactive(GenerateIsActive.isActive()).type(GenerateCouponType.couponType()).status(GenerateStatus.generateStatus())
                     .createdby(GenerateCreateBy.createBy()).createDate(GenerateDate.RandomDate())
                     //.validitydate(GenerateDateValidity.RandomDate())
                     .build();
+
+//            Coupon coupon = Coupon.builder().
+//                    couponcode(GenerateCouponCode.generateCode()).category(category).
+//                        title(title).build();
             list.add(coupon);
         }
         return couponRepository.saveAll(list);

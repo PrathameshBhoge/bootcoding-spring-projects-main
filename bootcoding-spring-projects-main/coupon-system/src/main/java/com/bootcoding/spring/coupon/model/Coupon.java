@@ -12,7 +12,7 @@ import java.util.Date;
 @Entity
 public class Coupon {
    @Id
-   @GeneratedValue
+   @GeneratedValue(strategy = GenerationType.AUTO)
    private int id;
    private String title;
    @Column(name="coupon_type")
