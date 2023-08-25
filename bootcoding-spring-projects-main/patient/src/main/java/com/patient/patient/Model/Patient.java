@@ -7,23 +7,20 @@ import lombok.Data;
 
 @Data
 @Builder
-@Table(name = "Patient-app")
+@Table(name = "Patient")
 @Entity
 public class Patient {
     @Id
     @GeneratedValue
     private int id;
-
     @Column(name = "patient_name")
     private String patientname;
-
-    @Column(name = "age")
     private int age;
-
-    @Column(name= "phone")
+    private String gender;
     private long phone;
-
-    @Column(name= "disease")
+    @Column(name="bed_no")
+    private int  bedNo;
+    private String department;
     private String dieases;
 
 }

@@ -1,6 +1,7 @@
 package com.patient.patient.Controller;
 
 import com.patient.patient.Model.Patient;
+import com.patient.patient.Service.patientServicejpa;
 import com.patient.patient.Service.patientservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,9 @@ public class patientcontroller {
 
     @Autowired
     patientservice service;
+
+    @Autowired
+    patientServicejpa patientServicejpa;
 
    /* @PostMapping("/check")
     public String check(@RequestBody String input){
@@ -46,5 +50,14 @@ public class patientcontroller {
     public Patient patientById(@PathVariable("id") int id){
         Patient p=service.patientById(id);
         return p;
+
+
+    }
+
+    @PostMapping("/save_patient/{size}")
+    public String saverandom (@PathVariable int size){
+
+                patientServicejpa.insertPatient(size);
+                return "abcd";
     }
 }

@@ -1,13 +1,38 @@
 package com.patient.patient.Service;
 
 
+import com.patient.patient.Model.Patient;
+import com.patient.patient.repository.RepositoryPatient;
+import com.patient.patient.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Component;
 
-@RestController
-@RequestMapping("/JPA/")
+import java.security.cert.CertPathBuilder;
+import java.util.ArrayList;
+import java.util.List;
+
+@Component
 public class patientServicejpa {
-    @Autowired
-    
+ @Autowired
+    private  RepositoryPatient repositoryPatient;
+
+
+    public List<Patient> insertPatient(int size){
+        List<Patient> list= new ArrayList<>();
+        for(int i=0;i<size;i++){
+            Patient patient= Patient.builder().
+                    patientname(GeneratePatientName.getname()).
+                    age(GenerateAge.getage()).
+                    gender(GenerateGender.getgender()).
+                    phone(GeneratePhone.getphone()).
+                    bedNo(GeneratebedNo.getbedno()).
+                    department(GenerateDepartment.getdepartment()).
+                    dieases(GenerateDiesease.getdisease()).build();
+            list.add(patient);
+        }
+        return repositoryPatient.saveAll(list);
+    }
+
+
+
 }
