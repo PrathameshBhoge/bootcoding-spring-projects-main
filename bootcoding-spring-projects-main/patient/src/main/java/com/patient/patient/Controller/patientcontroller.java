@@ -55,9 +55,9 @@ public class patientcontroller {
     }
 
     @PostMapping("/save_patient/{size}")
-    public String saverandom (@PathVariable int size){
+    public String saverandom (@PathVariable int size , @RequestBody Patient patient){
 
-                patientServicejpa.insertPatient(size);
+                patientServicejpa.insertPatient(size, patient.getDepartment(),patient.getAge());
                 return "abcd";
     }
 }
