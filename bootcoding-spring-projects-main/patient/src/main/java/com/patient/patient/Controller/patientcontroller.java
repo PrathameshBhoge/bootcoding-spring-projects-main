@@ -3,10 +3,12 @@ package com.patient.patient.Controller;
 import com.patient.patient.Model.Patient;
 import com.patient.patient.Service.patientServicejpa;
 import com.patient.patient.Service.patientservice;
+import org.aspectj.apache.bcel.classfile.Module;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/patient")
@@ -18,13 +20,29 @@ public class patientcontroller {
     @Autowired
     patientServicejpa patientServicejpa;
 
-   /* @PostMapping("/check")
-    public String check(@RequestBody String input){
-        System.out.println(""+input);
-        return "success";
 
-    }*/
 
+    @PostMapping("/save_patient/{size}")
+    public String saverandom (@PathVariable int size , @RequestBody Patient patient) {
+        patientServicejpa.insertPatient(size/*,patient.getDepartment(), patient.getAge()*/);
+        return "success size";
+    }
+
+    @GetMapping("/getallpatient")
+    public List<Patient> getallpatient(){
+        return patientServicejpa.getallpatient();
+    }
+
+    @PutMapping("/update/{id}")
+    public Optional<Patient> updatepatientdetails(@PathVariable("id") int id, @RequestBody Patient patient){
+        return patientServicejpa.updatepatientdetailsbyid(id,patient);
+    }
+
+    @DeleteMapping("/{id}")
+    public String Deletepatientbyid(@PathVariable("id") int id ){
+        patientServicejpa.deletepatientByid(id);
+        return "Patient Decharged";
+    }
     @PostMapping("/register")
     public String savePatient(@RequestBody Patient patient) {
         service.save(patient);
@@ -54,10 +72,6 @@ public class patientcontroller {
 
     }
 
-    @PostMapping("/save_patient/{size}")
-    public String saverandom (@PathVariable int size , @RequestBody Patient patient){
 
-                patientServicejpa.insertPatient(size, patient.getDepartment(),patient.getAge());
-                return "abcd";
-    }
+
 }
