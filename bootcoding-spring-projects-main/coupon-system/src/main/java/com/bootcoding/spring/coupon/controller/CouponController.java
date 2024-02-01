@@ -61,6 +61,11 @@ public class CouponController {
         int quantity = 10;
         return couponService.getNewCoupon(quantity);
     }
+
+//    @GetMapping("getallcoupon")
+//    public List<Coupon> getallcoupon(){
+//        return couponService.getallpatient();
+//    }
     // http://localhost:8082/app-name/coupon/getCoupon
 
     @PostMapping("/save_random_data/{value}")

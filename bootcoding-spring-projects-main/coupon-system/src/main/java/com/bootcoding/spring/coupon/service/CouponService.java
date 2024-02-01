@@ -47,6 +47,7 @@ public class CouponService {
         return couponRepository.saveAll(list);
     }
 
+
 //    public Coupon generateNewCoupon() {
 //        Coupon coupon = Coupon.builder()
 //                .id(UUID.randomUUID().toString())
